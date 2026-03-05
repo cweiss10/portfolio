@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Project } from "@/lib/data";
 
 interface ProjectCardProps {
@@ -11,9 +12,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {project.title}
       </h3>
 
-      <p className="text-gray-400 mb-4 leading-relaxed">
-        {project.description}
-      </p>
+      <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
 
       <div className="flex flex-wrap gap-2 mb-6">
         {project.technologies.map((tech) => (
@@ -26,7 +25,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4">
+        {project.caseStudyUrl && (
+          <Link
+            href={project.caseStudyUrl}
+            className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M8 10h8M8 14h5m-7 6h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            Case Study
+          </Link>
+        )}
+
         {project.githubUrl && (
           <a
             href={project.githubUrl}
@@ -40,6 +56,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             Code
           </a>
         )}
+
         {project.liveUrl && (
           <a
             href={project.liveUrl}
@@ -48,7 +65,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
             </svg>
             Live Demo
           </a>
