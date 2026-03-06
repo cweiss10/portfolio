@@ -8,13 +8,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name - Portfolio",
-  description: "Software developer portfolio showcasing projects and experience in modern web development.",
-  keywords: ["software developer", "web developer", "portfolio", "React", "Next.js"],
-  authors: [{ name: "Your Name" }],
+  title: "Cat Weiss - Portfolio",
+  description:
+    "Data Engineer portfolio showcasing data engineering, analytics, and GenAI projects.",
+  keywords: [
+    "Cat Weiss",
+    "data engineer",
+    "portfolio",
+    "machine learning",
+    "data pipelines",
+    "RAG",
+  ],
+  authors: [{ name: "Cat Weiss" }],
   openGraph: {
-    title: "Your Name - Portfolio",
-    description: "Software developer portfolio showcasing projects and experience",
+    title: "Cat Weiss - Portfolio",
+    description: "Data Engineer portfolio with data and GenAI project case studies.",
     type: "website",
   },
 };
@@ -26,9 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
-        {children}
-      </body>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }

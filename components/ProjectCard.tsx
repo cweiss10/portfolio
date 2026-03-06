@@ -7,14 +7,14 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="group bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1">
-      <h3 className="text-2xl font-bold mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all">
+    <div className="h-full group bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-7 space-y-5 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1">
+      <h3 className="text-2xl leading-tight font-bold group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all">
         {project.title}
       </h3>
 
-      <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
+      <p className="text-gray-300 text-[1.02rem] leading-7">{project.description}</p>
 
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-2">
         {project.technologies.map((tech) => (
           <span
             key={tech}
@@ -25,7 +25,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 pt-1">
         {project.caseStudyUrl && (
           <Link
             href={project.caseStudyUrl}
