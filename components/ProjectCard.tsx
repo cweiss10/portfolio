@@ -8,6 +8,12 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="h-full group bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-7 space-y-5 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1">
+      {project.badge && (
+        <div className="inline-flex items-center rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1 text-xs font-medium tracking-wide text-amber-200">
+          {project.badge}
+        </div>
+      )}
+
       <h3 className="text-2xl leading-tight font-bold group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 group-hover:bg-clip-text transition-all">
         {project.title}
       </h3>

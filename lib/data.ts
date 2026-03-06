@@ -23,9 +23,27 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   caseStudyUrl?: string;
+  badge?: string;
 }
 
 export const projects: Project[] = [
+  {
+    title: "KubeBench",
+    description:
+      "Master's capstone project: a Kubernetes-native benchmark and model-serving platform for code-generating LLMs, with fine-tuned domain models, live cluster-based evaluation, and cloud deployment infrastructure.",
+    technologies: [
+      "Python",
+      "Kubernetes",
+      "FastAPI",
+      "QLoRA",
+      "Terraform",
+      "GCP + DigitalOcean",
+    ],
+    githubUrl: "https://github.com/UC-Berkeley-I-School/210-section-5-YOELO",
+    liveUrl: "https://kubebench.dev",
+    caseStudyUrl: "/projects/kubebench",
+    badge: "Thesis",
+  },
   {
     title: "Catville",
     description:
@@ -56,5 +74,38 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/catweiss/genAI-final-report",
     caseStudyUrl: "/projects/genai-rag-assistant",
+    badge: "Coursework",
+  },
+  {
+    title: "MLOps Sentiment API",
+    description:
+      "End-to-end machine learning API project for MLOps coursework: FastAPI + PyTorch sentiment inference, Redis caching, Dockerized deployment to Kubernetes on Azure, and performance validation with k6 + Grafana.",
+    technologies: [
+      "FastAPI",
+      "PyTorch",
+      "Redis",
+      "Docker",
+      "Kubernetes (AKS)",
+      "k6 + Grafana",
+    ],
+    githubUrl: "https://github.com/UCB-W255/project-pytorch-fastapi-cweiss10",
+    caseStudyUrl: "/projects/mlops-pytorch-api",
+    badge: "Coursework",
+  },
+  {
+    title: "AI vs Real Image Classifier",
+    description:
+      "Coursework project building a computer-vision classifier to detect AI-generated versus real images, including preprocessing, augmentation, model iteration, and evaluation on held-out subsets.",
+    technologies: [
+      "TensorFlow/Keras",
+      "CNN",
+      "Computer Vision",
+      "NumPy",
+      "Jupyter",
+      "Model Tuning",
+    ],
+    githubUrl: "https://github.com/akinlaba/final_project_207",
+    caseStudyUrl: "/projects/ai-vs-real-classifier",
+    badge: "Coursework",
   },
 ];
